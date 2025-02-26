@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>RouteAlert Control Panel</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+
+    <h1>RouteAlert Control Panel</h1>
+
+    <audio id="audioAlert" src="path/to/alert-sound.mp3" preload="auto"></audio>
+
+    <label for="routes">Select a Vehicle</label>
+
+    <select id="routes" onchange="updateSelectedRoute()"></select>
+		<button onclick="openSelectedRoute()">Open URL</button>
+		<button onclick="shareOnWhatsApp()">WhatsApp</button>
+		<button onclick="copyURL()">Copy URL</button>
+
+    <div id="url-container"></div>
+
+	</br>
+
+	<div>
+	    <label for="timerInterval">Heartbeat Interval (seconds)</label>
+		<input type="number" id="timerInterval" value="20">
+
+	
+		<button onclick="doStartHeartbeat()">Start</button>
+		<button onclick="doStopHeartbeat()">Stop</button>
+		
+	</div>
+	
+<br/>
+
+    <div id="result-container"></div>
+    <br/>
+
+    <div id="server-name-container"></div>
+	
+    <br/>
+
+	<div class="button-container">
+		<button onclick="openStatisticsPage()">RA Admin Summary</button>
+		<button onclick="checkTomcat()">Check Tomcat</button>
+		<button onclick="checkWebServer()">Check Server</button>
+		<button onclick="restartServer()">Restart Server</button>
+        <button onclick="doGarbageCollection()">Garbage Collect</button>
+	    <button onclick="checkSmsBalanceOfRouteMobile()">SMS Balance</button>
+	</div>	
+    <br/>
+    <div id="sms-container"></div>
+    <br/>
+<div>
+    <label for="action">Parent App for Parents :</label>
+    <select id="action">
+        <option value="2">Query Current Status</option>
+        <option value="1">Enable Parent App</option>
+        <option value="0">Disable Parent App</option>
+    </select>
+
+	
+    <button onclick="executeAction()">Submit</button>
+</div>
+<br/>
+    <div id="parent-app-container"></div>
+
+
+	<div class="toast" id="toast"></div>
+    <div id="alert-container"></div> 
+</div>
+    <script type="text/javascript" src="js/script.js"></script>
+       
+
+  
+
+    <!-- The rest of your existing code... -->
+
+</body>
+
+</html>
